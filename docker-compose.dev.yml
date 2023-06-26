@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-# 
+#
 # This program is released under license GNU GPL v3+ license.
 #
 #========================================================================
@@ -24,27 +24,21 @@ services:
 
     boca-base:
         image: boca-base:latest
-        build: 
+        build:
             context: .
             dockerfile: docker/dev/base/Dockerfile
 
     boca-web:
         image: boca-web:latest
-        build: 
+        build:
             context: .
             dockerfile: docker/dev/web/Dockerfile
         # CAUTION: this bind mount will overwrite BOCA website. For future development...
         # volumes:
         #     - ./src:/var/www/boca/src
 
-    boca-jail:
-        image: boca-jail:latest
-        build: 
-            context: .
-            dockerfile: docker/dev/jail/Dockerfile
-
     # boca-db:
-    #     volumes: 
+    #     volumes:
     #         - db-data:/var/lib/postgresql/data
 
     boca-adminer:
